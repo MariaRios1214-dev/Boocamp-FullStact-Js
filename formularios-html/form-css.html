@@ -6,44 +6,91 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Formulario con css</title>
     <style>
-        input[type=text] {
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: wheat;
+        }
+        
+        h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: cursive;
+            color: darkseagreen;
+        }
+        
+        input[type=text],
+        select,
+        textarea {
             width: 100%;
             padding: 12px 40px;
-            box-sizing: border-box;
             margin: 10px 0px;
-            /* border: 4px solid red;
-            border-radius: 8px 2px 10px 15px;
-            background-color: aquamarine;
-            color: blueviolet; */
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            background-color: white;
+        }
+        
+        input[type=text] {
             background-image: url('../images/searchicon.png');
             background-repeat: no-repeat;
             background-position: 10px;
         }
         
-         ::placeholder {
-            color: crimson;
+        label {
+            padding: 12px 12px 12px 0px;
+            display: block;
+            color: black;
         }
         
+         ::placeholder {
+            color: #454545;
+        }
+        /*         
         input:focus {
             border: 6px solid orchid;
         }
+         */
         
         select {
-            width: 100%;
             height: 40px;
-            margin: 8px 0px;
+        }
+        
+        button {
+            background-color: #4cAF50;
+            border: none;
+            color: white;
+            padding: 10px 32px;
+            text-decoration: none;
+            margin: 12px 0px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .container {
+            border-radius: 4px;
+            background-color: #f2f2f2;
+            padding: 18px;
+            width: 500px;
+            margin: auto;
         }
     </style>
 </head>
 
 <body>
     <h1>Formulario estilizado con css</h1>
-    <div>
+    <div class="container">
         <form action="http:localhost:3000" method="POST">
             <label for="nombre ">Nombre</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" />
+            <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" required/>
             <label for="apellido">Apellido</label>
-            <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" />
+            <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" required/>
             <label for="pais">País</label>
             <select name="pais" id="pais">
                 <option disabled selected hidden >Seleccione</option>
@@ -51,6 +98,9 @@
                 <option>Perú</option>
                 <option>Australia</option>
             </select>
+            <button type="submit">
+            Enviar
+            </button>
         </form>
     </div>
 </body>
